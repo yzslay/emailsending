@@ -20,7 +20,7 @@ server.login(your_email, your_password)
 email_list = pd.read_excel('D:/python3/pythonmail/Maillist.xlsx')  # 設定檔案位置
 names = email_list['NAME']  # 讀取Name
 emails = email_list['EMAIL']  # 讀取Email
-company = email_list['COMPANY']  # 讀取COMPANY
+companys = email_list['COMPANY']  # 讀取COMPANY
 
 
 for i in range(len(emails)):
@@ -28,7 +28,7 @@ for i in range(len(emails)):
     # for every record get the name and the email addresses
     name = names[i]
     email = emails[i]
-    company = company[i]
+    company = companys[i]
     # the message to be emailed 更換
     emailcontent.set_content(html.substitute(
         {'name': name, 'company': company}), 'html')
